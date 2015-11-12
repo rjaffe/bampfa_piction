@@ -58,7 +58,7 @@ def makeDictFromCsv(f):
         mydict = dict((rows[0], rows) for rows in reader)
         mycleandict = cleanKeys(mydict)
         output = str(mycleandict)
-        with open('cleanDict.txt', 'w') as dictfile:
+        with open('cleanDict_py3.txt', 'w') as dictfile:
             dictfile.write(output)
     return mycleandict
 
@@ -72,7 +72,7 @@ def filterMetadataUsingFiles(fileList):
     :return:
     """
     # Replace sys.argv[1] with 'all-metadata_REUPS.csv' when running in pyCharm
-    outputcsvfile = open('filtered_' + 'all-metadata_REUPS_unicode_py3.csv', 'w', newline='')
+    outputcsvfile = open('filtered_' + 'all-metadata_REUPS_py3.csv', 'w', newline='')
     outputwriter = csv.writer(outputcsvfile, delimiter=",", quoting=csv.QUOTE_ALL)
 
     mycleandict = {}
